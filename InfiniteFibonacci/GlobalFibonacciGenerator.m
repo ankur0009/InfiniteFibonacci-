@@ -10,9 +10,9 @@
 #import "JKBigInteger.h"
 
 
-JKBigInteger *currentFib;
-JKBigInteger *nextFib;
-JKBigInteger* placeholderFib;
+JKBigInteger *currentFib; //Current fib number
+JKBigInteger *nextFib; //Next fib number
+JKBigInteger* placeholderFib; //Used to move to next fib number
 
 @implementation GlobalFibonacciGenerator
 

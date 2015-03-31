@@ -9,7 +9,7 @@
 #import "ViewController.h"
 #import "GlobalFibonacciGenerator.h"
 
-#define k_fibIncremental 20; //Numer of fibonacci number incremented
+#define k_fibIncremental 20; //Numer of fibonacci numbers incremented
                             // once we hit the bottom of existing set
 
 @interface ViewController ()
@@ -51,21 +51,31 @@
     
     if (indexPath.row < self.tableViewData.count) {
         cell.textLabel.text = [self.tableViewData objectAtIndex:indexPath.row];
+        cell.textLabel.adjustsFontSizeToFitWidth = YES;
+        cell.textLabel.minimumScaleFactor = 0.4;
     } else {
-        cell.textLabel.text = @"Getting more Fibonacci numbers...";
+        cell.textLabel.text = NSLocalizedString(@"Getting more fibonacci numbers...", nil);
         
         //Check the table loading lock and show more Fibonacci numbers
         if (!self.loadingMoreTableViewData) {
             self.loadingMoreTableViewData = YES;
-            [self addMoreFibonacciNumbers];
-            //Reload table with some delay to let the numbers be generated
-            [self performSelector:@selector(refreshTable) withObject:nil afterDelay:0.2f];
+            
+            //Make async call to load more fib numbers (not blocking main thread)
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+                [self addMoreFibonacciNumbers];
+                //Reload table on main thread
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self refreshTable];
+                });
+            });
+           
         }
     }
     
     return cell;
 }
 
+//Add more fibonacci numbers to the table
 - (void)addMoreFibonacciNumbers {
     int totalFibNumbers = (int)self.tableViewData.count + k_fibIncremental;
     while (self.tableViewData.count < totalFibNumbers) {

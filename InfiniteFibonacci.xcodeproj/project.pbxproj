@@ -22,6 +22,8 @@
 		924E0E6E1AAE35B400152130 /* tommath.c in Sources */ = {isa = PBXBuildFile; fileRef = 924E0E671AAE35B400152130 /* tommath.c */; };
 		924E0E701AAE4AEC00152130 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 924E0E6F1AAE4AEC00152130 /* README.md */; };
 		924E0E711AAE4AEC00152130 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 924E0E6F1AAE4AEC00152130 /* README.md */; };
+		92B9D1211ACA37C5000DE7D5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 92B9D1201ACA37C5000DE7D5 /* Localizable.strings */; };
+		92B9D1221ACA37C5000DE7D5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 92B9D1201ACA37C5000DE7D5 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,7 @@
 		924E0E691AAE35B400152130 /* tommath_class.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tommath_class.h; sourceTree = "<group>"; };
 		924E0E6A1AAE35B400152130 /* tommath_superclass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tommath_superclass.h; sourceTree = "<group>"; };
 		924E0E6F1AAE4AEC00152130 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		92B9D1201ACA37C5000DE7D5 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +120,7 @@
 		924E0E361AADDE7500152130 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				92B9D1201ACA37C5000DE7D5 /* Localizable.strings */,
 				924E0E371AADDE7500152130 /* Info.plist */,
 				924E0E381AADDE7500152130 /* main.m */,
 			);
@@ -242,6 +246,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				924E0E421AADDE7500152130 /* Main.storyboard in Resources */,
+				92B9D1211ACA37C5000DE7D5 /* Localizable.strings in Resources */,
 				924E0E471AADDE7500152130 /* LaunchScreen.xib in Resources */,
 				924E0E441AADDE7500152130 /* Images.xcassets in Resources */,
 			);
@@ -251,6 +256,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92B9D1221ACA37C5000DE7D5 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -462,6 +468,7 @@
 				924E0E581AADDE7500152130 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		924E0E591AADDE7500152130 /* Build configuration list for PBXNativeTarget "InfiniteFibonacciTests" */ = {
 			isa = XCConfigurationList;
@@ -470,6 +477,7 @@
 				924E0E5B1AADDE7500152130 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
